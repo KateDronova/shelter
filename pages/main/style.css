@@ -1,6 +1,7 @@
 :root {
     --color-primary: #F1CDB3;
     --color-dark-s: #CDCDCD;
+    --color-dark-m: #B2B2B2;
     --color-dark-l: #545454;
     --color-dark-xl: #4C4C4C;
     --color-dark-3xl: #292929;
@@ -31,8 +32,55 @@ header {
     justify-content: space-between;
 }
 
+h1, h2, h3, h4 {
+    font-weight: 400;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0px;
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 35.2px;
+    letter-spacing: 0.06em;
+}
+
+h2 {
+    font-size: 44px;
+    line-height: 57.2px;
+    color: var(--color-light-xl);
+}
+
+h3 {
+    font-size: 35px;
+    line-height: 45.5px;
+    color: var(--color-dark-l);
+}
+
+footer h3 {
+    color: var(--color-light-xl);
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 115%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-l);
+}
+
 div.logo {
     width: 200px;
+}
+
+.logo p {
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    position: absolute;
+    left: 4px;
 }
 
 .logo a {
@@ -63,6 +111,7 @@ a {
 a:hover {
     padding-bottom: 3px;
     border-bottom: 3px solid #F1CDB3;
+    cursor: pointer;
 }
 
 a:focus, a.default {
@@ -107,6 +156,10 @@ div.not-only {
     border-radius: 100px;
 }
 
+.button:hover {
+    cursor: pointer;
+}
+
 .button_primary {
     padding: 15px 45px;
     border-style: none;
@@ -120,21 +173,11 @@ div.not-only {
 }
 
 .button_arrow {
-    position: absolute;
     box-sizing: border-box;
     width: 52px;
     height: 52px;
     border: 2px solid var(--color-primary);
     background-color: var(--color-light-l);
-    padding: 15px;
-}
-
-.right.button_arrow {
-    right: 0px;
-}
-
-.left.button_arrow {
-    left: 0px;
 }
 
 div.about-block {
@@ -169,7 +212,7 @@ div.about-block {
     line-height: 160%;
 }
 
-div.our-friends {
+div.our-friends, div.donation {
     background-color: var(--color-light-l);
     padding-top: 80px;
     padding-bottom: 100px;
@@ -186,14 +229,14 @@ div.our-friends {
     align-items: center;
 }
 
-.our-friends h3 {
+.our-friends h3, .help h3 {
     text-align: center;
 }
 
 .content .slider {
     width: 1200px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     margin-top: 60px;
@@ -222,50 +265,65 @@ div.our-friends {
     margin-bottom: 30px;
 }
 
-h1, h2, h3 {
-    font-weight:400;
-    font-style: normal;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+div.help {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.help .help-content {
+    width: 1200px;
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-content .list {
+    margin-top: 60px;
+    width: 1026px;
+    height: 285px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.list div {
     margin: 0px;
-}
-
-h1 {
-    font-size: 32px;
-    line-height: 35.2px;
-    letter-spacing: 0.06em;
-}
-
-h2 {
-    font-size: 44px;
-    line-height: 57.2px;
-    color: var(--color-light-xl);
-}
-
-h3 {
-    font-size: 35px;
-    line-height: 45.5px;
-    color: var(--color-dark-l);
-}
-
-footer h3 {
-    color: var(--color-light-xl);
-}
-
-.logo p {
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.1em;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    position: absolute;
-    left: 4px;
-}
-
-
-div.slider {
+    margin-right: 90px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-div.list {
+.list div:nth-child(5) {
+    margin-right: 0px;
+}
+
+.list div:nth-child(6) {
+    margin-left: 90px;
+}
+
+.list img {
+    margin-bottom: 30px;
+}
+
+.donation .content {
+    width: 1200px;
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .text-block {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
