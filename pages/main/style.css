@@ -1,3 +1,14 @@
+:root {
+    --color-primary: #F1CDB3;
+    --color-dark-s: #CDCDCD;
+    --color-dark-l: #545454;
+    --color-dark-xl: #4C4C4C;
+    --color-dark-3xl: #292929;
+    --color-light-s: #FAFAFA;
+    --color-light-l: #F6F6F6;
+    --color-light-xl: #FFFFFF;
+  }
+
 body {
     color:#545454;
     margin: 0px;
@@ -24,18 +35,40 @@ div.logo {
     width: 200px;
 }
 
+.logo a {
+    color: var(--color-primary);
+}
+
+.logo p {
+    color: var(--color-light-xl);
+}
+
 header nav {
     position: relative;
     right: 0px;
-    margin-left: auto;
-    width: 450px;
+    width: 443px;
     display: flex;
     justify-content: space-between;
-
 }
 
 nav div {
     align-self: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark-s);
+}
+
+a:hover {
+    padding-bottom: 3px;
+    border-bottom: 3px solid #F1CDB3;
+}
+
+a:focus, a.default {
+    color: #FAFAFA;
+    padding-bottom: 3px;
+    border-bottom: 3px solid #F1CDB3;
 }
 
 div.background {
@@ -45,67 +78,178 @@ div.background {
 
 div.not-only {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 1200px;
     margin: auto;
 }
 
 .not-only .content {
-    align-self: center;
     width: 460px;
-    margin-top: 163px;
-    margin-bottom: 243px;
+    height: 322px;
     margin: 0;
+    margin-top: 163px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .not-only p {
     font-size: 15px;
     line-height: 160%;
-    margin-bottom: 40px;
+    color: var(--color-dark-s);
 }
 
-.button-primary {
-    background-color: #F1CDB3;
-    padding: 15px 45px;
-    color: rgba(41, 41, 41, 1);
+.button {
+    color: var(--color-dark-3xl);
     font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    border-style: none;
     border-radius: 100px;
 }
 
-div.about-content {
+.button_primary {
+    padding: 15px 45px;
+    border-style: none;
+    background-color: #F1CDB3;
+}
+
+.button_secondary {
+    padding: 15px 45px;
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-light-s);
+}
+
+.button_arrow {
+    position: absolute;
+    box-sizing: border-box;
+    width: 52px;
+    height: 52px;
+    border: 2px solid var(--color-primary);
+    background-color: var(--color-light-l);
+    padding: 15px;
+}
+
+.right.button_arrow {
+    right: 0px;
+}
+
+.left.button_arrow {
+    left: 0px;
+}
+
+div.about-block {
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
     width: 1200px;
+}
+
+.about-block .about-content {
     margin: auto;
     margin-top: 80px;
     margin-bottom: 100px;
     display: flex;
+    margin-left: 175px;
+    margin-right: 175px;
+    justify-content: space-between;
+}
+
+.about-content .text-block {
+    width: 430px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text-block p {
+    margin: 0px;
+    color: var(--color-dark-xl);
+    font-size: 15px;
+    line-height: 160%;
+}
+
+div.our-friends {
+    background-color: var(--color-light-l);
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.our-friends .content {
+    width: 1200px;
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-friends h3 {
+    text-align: center;
+}
+
+.content .slider {
+    width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background-color: var(--color-light-s);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card p {
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 23px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.06em;
+}
+
+.card button {
+    margin: auto;
+    margin-bottom: 30px;
 }
 
 h1, h2, h3 {
     font-weight:400;
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0px;
 }
 
 h1 {
     font-size: 32px;
     line-height: 35.2px;
     letter-spacing: 0.06em;
-    margin: 0px;
 }
 
 h2 {
     font-size: 44px;
     line-height: 57.2px;
-    margin-top: 0;
+    color: var(--color-light-xl);
 }
 
 h3 {
     font-size: 35px;
     line-height: 45.5px;
+    color: var(--color-dark-l);
 }
 
+footer h3 {
+    color: var(--color-light-xl);
+}
 
 .logo p {
     font-size: 13px;
@@ -124,28 +268,4 @@ div.slider {
 
 div.list {
     display: flex;
-}
-
-.color-primary {
-    color:#F1CDB3;
-}
-
-.color-dark-s {
-    color: #CDCDCD;
-}
-
-.color-dark-l {
-    color: #545454;
-}
-
-.color-dark-xl {
-    color: #4C4C4C;
-}
-
-.color-light-xl {
-    color: #FFFFFF;
-}
-
-.underlined {
-    text-decoration: underline;
 }
