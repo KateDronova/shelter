@@ -1,5 +1,6 @@
 :root {
     --color-primary: #F1CDB3;
+    --color-primary-light: #FDDCC4;
     --color-dark-s: #CDCDCD;
     --color-dark-m: #B2B2B2;
     --color-dark-l: #545454;
@@ -122,13 +123,13 @@ a:hover {
 
 nav a:hover {
     padding-bottom: 3px;
-    border-bottom: 3px solid #F1CDB3;
+    border-bottom: 3px solid var(--color-primary);
 }
 
 a:focus, a.default {
-    color: #FAFAFA;
+    color: var(--color-light-s);
     padding-bottom: 3px;
-    border-bottom: 3px solid #F1CDB3;
+    border-bottom: 3px solid var(--color-primary);
 }
 
 div.background {
@@ -169,12 +170,13 @@ div.not-only {
 
 .button:hover {
     cursor: pointer;
+    background-color: var(--color-primary-light);
 }
 
 .button_primary {
     padding: 15px 45px;
     border-style: none;
-    background-color: #F1CDB3;
+    background-color: var(--color-primary);
 }
 
 .button_secondary {
@@ -249,30 +251,32 @@ div.our-friends, div.donation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     margin-top: 60px;
     margin-bottom: 60px;
 }
 
 .card {
     background-color: var(--color-light-s);
+    border-radius: 9px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
-.card p {
+.card:hover {
+    background-color: var(--color-light-xl);
+}
+
+.card img {
+    border-radius: 9px 9px 0px 0px;
     margin: auto;
     margin-bottom: 30px;
-    margin-top: 30px;
-    font-size: 20px;
-    line-height: 23px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    letter-spacing: 0.06em;
 }
 
 .card button {
     margin: auto;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -300,6 +304,7 @@ div.help {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
+    row-gap: 58px;
 }
 
 .list div {
@@ -316,11 +321,6 @@ div.help {
 
 .list div:nth-child(6) {
     margin-left: 90px;
-    align-self:flex-end;
-}
-
-.list div:nth-child(7), .list div:nth-child(8), .list div:nth-child(9) {
-    align-self:flex-end;
 }
 
 .list img {
