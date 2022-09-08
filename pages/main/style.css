@@ -32,17 +32,17 @@ header {
     justify-content: space-between;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
     font-weight: 400;
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0px;
+    letter-spacing: 0.06em;
 }
 
 h1 {
     font-size: 32px;
     line-height: 35.2px;
-    letter-spacing: 0.06em;
 }
 
 h2 {
@@ -65,8 +65,16 @@ h4 {
     font-size: 20px;
     line-height: 115%;
     text-align: center;
-    letter-spacing: 0.06em;
     color: var(--color-dark-l);
+}
+
+footer h4 {
+    color: var(--color-primary);
+}
+
+h5 {
+    font-size: 15px;
+    line-height: 110%;
 }
 
 div.logo {
@@ -109,9 +117,12 @@ a {
 }
 
 a:hover {
+    cursor: pointer;
+}
+
+nav a:hover {
     padding-bottom: 3px;
     border-bottom: 3px solid #F1CDB3;
-    cursor: pointer;
 }
 
 a:focus, a.default {
@@ -205,7 +216,7 @@ div.about-block {
     justify-content: space-between;
 }
 
-.text-block p {
+.about-content p {
     margin: 0px;
     color: var(--color-dark-xl);
     font-size: 15px;
@@ -288,7 +299,7 @@ div.help {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .list div {
@@ -305,6 +316,11 @@ div.help {
 
 .list div:nth-child(6) {
     margin-left: 90px;
+    align-self:flex-end;
+}
+
+.list div:nth-child(7), .list div:nth-child(8), .list div:nth-child(9) {
+    align-self:flex-end;
 }
 
 .list img {
@@ -312,18 +328,71 @@ div.help {
 }
 
 .donation .content {
-    width: 1200px;
+    width: 915px;
     margin: auto;
-    padding-left: 40px;
-    padding-right: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .content .text-block {
     width: 380px;
+    height: 282px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
+}
+
+div.credit-card {
+    padding: 10px 15px;
+    background-color: var(--color-primary);
+    border-radius: 9px;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    column-gap: 10px;
+}
+
+.donation p {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--color-dark-m);
+}
+
+footer {
+    height: 350px;
+    background-image: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
+}
+
+footer .footer-content {
+    width: 1200px;
+    margin: auto;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content .contacts {
+    display: grid;
+    row-gap: 40px;
+    width: 280px;
+}
+
+.footer-content .locations {
+    display: grid;
+    row-gap: 32px;
+    width: 300px;
+}
+
+div.mail, div.phone, div.location {
+    display: flex;
+    align-items: center;
+}
+
+.footer-content h4 {
+    margin-left: 20px;
 }
