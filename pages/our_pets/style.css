@@ -12,7 +12,6 @@
   }
 
 body {
-    color:#545454;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -22,12 +21,12 @@ h1, h2, h3, h4, h5 {
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0px;
-    letter-spacing: 0.06em;
 }
 
 h1 {
     font-size: 32px;
     line-height: 35.2px;
+    letter-spacing: 0.06em;
 }
 
 h2 {
@@ -39,6 +38,7 @@ h2 {
 h3 {
     font-size: 35px;
     line-height: 45.5px;
+    letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
 
@@ -50,6 +50,7 @@ h4 {
     font-size: 20px;
     line-height: 115%;
     text-align: center;
+    letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
 
@@ -60,17 +61,20 @@ footer h4 {
 h5 {
     font-size: 15px;
     line-height: 110%;
+    letter-spacing: 0.06em;
 }
 
 header {
     margin: auto;
+    height: 120px;
     padding-left: 40px;
     padding-right: 40px;
     width: 1200px;
+    display: flex;
 }
 
 header .header-content {
-    margin: auto;
+    width: 1200px;
     margin-top: 30px;
     margin-bottom: 30px;
     display: flex;
@@ -94,15 +98,13 @@ div.logo {
 }
 
 header nav {
-    position: relative;
-    right: 0px;
+    font-size: 15px;
+    margin-right: 0px;
+    margin-top: -2px;
     width: 443px;
     display: flex;
     justify-content: space-between;
-}
-
-nav div {
-    align-self: center;
+    align-items: center;
 }
 
 a {
@@ -116,25 +118,29 @@ a:hover {
 
 nav a:hover {
     padding-bottom: 3px;
-    border-bottom: 3px solid #F1CDB3;
+    border-bottom: 3px solid var(--color-primary);
 }
 
 a:focus, a.default {
     color: var(--color-dark-3xl);
     padding-bottom: 3px;
-    border-bottom: 3px solid #F1CDB3;
+    border-bottom: 3px solid var(--color-primary);
 }
 
 .button {
     color: var(--color-dark-3xl);
+    border: 2px solid var(--color-primary);
     font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 100px;
+    letter-spacing: 0.06em;
+    line-height: 130%;
 }
 
 .button:hover {
     cursor: pointer;
     background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
 }
 
 .button_primary {
@@ -144,8 +150,7 @@ a:focus, a.default {
 }
 
 .button_secondary {
-    padding: 15px 45px;
-    border: 2px solid var(--color-primary);
+    padding: 13px 45px;
     background-color: var(--color-light-s);
 }
 
@@ -154,6 +159,20 @@ a:focus, a.default {
     width: 52px;
     height: 52px;
     border: 2px solid var(--color-primary);
+    background-color: var(--color-light-l);
+}
+
+.button.page:active {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.button.disabled {
+    color: var(--color-dark-s);
+    border-color: var(--color-dark-s);
+}
+
+.button.disabled:hover {
     background-color: var(--color-light-l);
 }
 
@@ -235,18 +254,20 @@ footer .footer-content {
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .footer-content .contacts {
+    margin-top: 16px;
     display: grid;
-    row-gap: 40px;
+    row-gap: 36px;
     width: 280px;
 }
 
 .footer-content .locations {
+    margin-top: 16px;
     display: grid;
-    row-gap: 32px;
+    row-gap: 33px;
     width: 300px;
 }
 
@@ -255,6 +276,11 @@ div.mail, div.phone, div.location {
     align-items: center;
 }
 
+.mail img, .phone img {
+    margin-top: 2px;
+}
+
 .footer-content h4 {
     margin-left: 20px;
+    text-align: left;
 }
