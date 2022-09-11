@@ -38,12 +38,12 @@ h1, h2, h3, h4, h5 {
     font-style: normal;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0px;
-    letter-spacing: 0.06em;
 }
 
 h1 {
     font-size: 32px;
     line-height: 35.2px;
+    letter-spacing: 0.06em;
 }
 
 h2 {
@@ -55,6 +55,7 @@ h2 {
 h3 {
     font-size: 35px;
     line-height: 45.5px;
+    letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
 
@@ -66,6 +67,7 @@ h4 {
     font-size: 20px;
     line-height: 115%;
     text-align: center;
+    letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
 
@@ -76,6 +78,7 @@ footer h4 {
 h5 {
     font-size: 15px;
     line-height: 110%;
+    letter-spacing: 0.06em;
 }
 
 div.logo {
@@ -101,15 +104,14 @@ div.logo {
 }
 
 header nav {
+    font-size: 15px;
     position: relative;
     right: 0px;
+    top: -2px;
     width: 443px;
     display: flex;
     justify-content: space-between;
-}
-
-nav div {
-    align-self: center;
+    align-items: center;
 }
 
 a {
@@ -163,9 +165,12 @@ div.not-only {
 
 .button {
     color: var(--color-dark-3xl);
+    border: 2px solid var(--color-primary);
     font-size: 17px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 100px;
+    letter-spacing: 0.06em;
+    line-height: 130%;
 }
 
 .button:hover {
@@ -180,8 +185,7 @@ div.not-only {
 }
 
 .button_secondary {
-    padding: 15px 45px;
-    border: 2px solid var(--color-primary);
+    padding: 13px 43px;
     background-color: var(--color-light-s);
 }
 
@@ -208,6 +212,7 @@ div.about-block {
     margin-left: 175px;
     margin-right: 175px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .about-content .text-block {
@@ -225,7 +230,7 @@ div.about-block {
     line-height: 160%;
 }
 
-div.our-friends, div.donation {
+div.our-friends {
     background-color: var(--color-light-l);
     padding-top: 80px;
     padding-bottom: 100px;
@@ -262,6 +267,11 @@ div.our-friends, div.donation {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    margin-right: 38px;
+}
+
+.card:last-of-type {
+    margin-right: 0px;
 }
 
 .card:hover {
@@ -281,8 +291,8 @@ div.our-friends, div.donation {
 }
 
 div.help {
-    padding-top: 80px;
-    padding-bottom: 100px;
+    padding-top: 77px;
+    padding-bottom: 97px;
 }
 
 .help .help-content {
@@ -304,12 +314,12 @@ div.help {
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: flex-start;
-    row-gap: 58px;
+    row-gap: 50px;
 }
 
 .list div {
     margin: 0px;
-    margin-right: 90px;
+    margin-right: 85px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -320,28 +330,36 @@ div.help {
 }
 
 .list div:nth-child(6) {
-    margin-left: 90px;
+    margin-left: 85px;
 }
 
 .list img {
     margin-bottom: 30px;
 }
 
-.donation .content {
+div.donation {
+    background-color: var(--color-light-l);
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.donation .donation-content {
     width: 915px;
     margin: auto;
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.content .text-block {
+.donation-content .text-block {
     width: 380px;
     height: 282px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    row-gap: 20px;
 }
 
 div.credit-card {
@@ -350,10 +368,11 @@ div.credit-card {
     border-radius: 9px;
     display: grid;
     grid-template-columns: 30px 1fr;
-    column-gap: 10px;
+    column-gap: 15px;
 }
 
 .donation p {
+    margin: 0px;
     font-family: 'Arial';
     font-style: italic;
     font-weight: 400;
@@ -373,18 +392,20 @@ footer .footer-content {
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .footer-content .contacts {
+    margin-top: 16px;
     display: grid;
-    row-gap: 40px;
+    row-gap: 36px;
     width: 280px;
 }
 
 .footer-content .locations {
+    margin-top: 16px;
     display: grid;
-    row-gap: 32px;
+    row-gap: 33px;
     width: 300px;
 }
 
@@ -393,6 +414,11 @@ div.mail, div.phone, div.location {
     align-items: center;
 }
 
+.mail img, .phone img {
+    margin-top: 2px;
+}
+
 .footer-content h4 {
     margin-left: 20px;
+    text-align: left;
 }
