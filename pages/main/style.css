@@ -177,7 +177,6 @@ div.not-only {
 
 .button_primary {
     padding: 15px 45px;
-    border-style: none;
     background-color: var(--color-primary);
 }
 
