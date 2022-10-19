@@ -136,7 +136,7 @@ div.background {
 div.not-only {
     display: flex;
     justify-content: space-between;
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -302,7 +302,7 @@ div.help {
 
 .help-content .list {
     margin-top: 60px;
-    width: 1026px;
+    max-width: 1026px;
     height: 285px;
     display: flex;
     justify-content: space-between;
@@ -338,7 +338,7 @@ div.donation {
 }
 
 .donation .donation-content {
-    width: 915px;
+    max-width: 915px;
     margin: auto;
     margin-top: 0px;
     display: flex;
@@ -376,14 +376,15 @@ div.credit-card {
 }
 
 footer {
-    height: 350px;
+    min-height: 350px;
     background-image: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
 }
 
 footer .footer-content {
     max-width: 1200px;
     margin: auto;
-    padding-top: 40px;
+    padding: 40px;
+    padding-bottom: 0px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -418,7 +419,7 @@ div.mail, div.phone, div.location {
     text-align: left;
 }
 
-@media all and (768px <= width < 1280px) {
+@media screen and (768px <= width < 1280px) {
     header {
         left: 30px;
         right: 30px;
@@ -426,16 +427,18 @@ div.mail, div.phone, div.location {
         min-width: 708px;
     }
 
-    div.not-only {
+    div.not-only, .about-block .about-content {
         flex-direction: column;
         align-items: center;
-        width: 100vh;
     }
 
     .not-only img {
         margin-top: 100px;
-        margin-left: calc(50% - 569px/2 + 70px);
+        margin-left: auto;
+        margin-right: 10px;
+        width: 74.089vh;
         min-width: 569px;
+        max-width: 698px;
         height: auto;
         align-self: flex-start;
     }
@@ -449,13 +452,17 @@ div.mail, div.phone, div.location {
     }
 
     .about-block .about-content {
-        flex-direction: column;
-        align-items: center;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     .about-content .text-block {
         order: -1;
         margin-bottom: 80px;
+    }
+
+    div.card:nth-of-type(2) {
+        margin-right: 0px;
     }
 
     div.card:last-of-type {
@@ -468,8 +475,10 @@ div.mail, div.phone, div.location {
     }
 
     .help-content .list {
-        width: fit-content;
+        width: 82.031%;
+        min-width: 630px;
         height: auto;
+        row-gap: 55px;
     }
 
     .list div{
@@ -477,7 +486,7 @@ div.mail, div.phone, div.location {
     }
 
     .list div:nth-child(3n-1), .list div:nth-child(3n-2) {
-        margin-right: 60px;
+        margin-right: 7.8125%;
         margin-left: 0px;
     }
 
@@ -493,6 +502,25 @@ div.mail, div.phone, div.location {
     .donation-content .text-block{
         order: -1;
         margin-bottom: 60px;
+    }
+
+    footer .footer-content {
+        padding: 30px;
+        padding-bottom: 0px;
+        column-gap: 60px;
+        row-gap: 65px;
+        justify-content: center;
+    }
+}
+
+@media screen and (320px <= width < 768px) {
+    .not-only img {
+        width: 81.25%;
+        margin-right: 3.125%;
+    }
+    
+    .not-only .content {
+        align-items: center;
     }
 
 }
