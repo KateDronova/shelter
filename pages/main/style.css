@@ -17,7 +17,7 @@ body {
 }
 
 div.wrapper {
-    width: 1280px;
+    max-width: 1280px;
     margin: auto;
     position: relative;
 }
@@ -25,7 +25,7 @@ div.wrapper {
 header {
     position: absolute;
     height: 60px;
-    left: calc(50% - 1200px/2);
+    left: 40px;
     right: 40px;
     top: 60px;
     display: flex;
@@ -302,7 +302,7 @@ div.help {
 
 .help-content .list {
     margin-top: 60px;
-    max-width: 100%;
+    width: 1026px;
     height: 285px;
     display: flex;
     justify-content: space-between;
@@ -381,12 +381,13 @@ footer {
 }
 
 footer .footer-content {
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
     padding-top: 40px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .footer-content .contacts {
@@ -423,7 +424,6 @@ div.mail, div.phone, div.location {
         right: 30px;
         top: 30px;
         min-width: 708px;
-        width: 100vh;
     }
 
     div.not-only {
@@ -461,11 +461,38 @@ div.mail, div.phone, div.location {
     div.card:last-of-type {
         display: none;
     }
-/*
-    .help-content .list {}
+
+    .help .help-content {
+        padding-left: 8.9844%;
+        padding-right: 8.9844%;
+    }
+
+    .help-content .list {
+        width: fit-content;
+        height: auto;
+    }
 
     .list div{
-        margin-right: 40px;
+        width: 170px;
     }
-*/
+
+    .list div:nth-child(3n-1), .list div:nth-child(3n-2) {
+        margin-right: 60px;
+        margin-left: 0px;
+    }
+
+    .list div:nth-child(3n){
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .donation .donation-content {
+        flex-direction: column;
+    }
+
+    .donation-content .text-block{
+        order: -1;
+        margin-bottom: 60px;
+    }
+
 }
