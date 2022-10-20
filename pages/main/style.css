@@ -41,19 +41,19 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     font-size: 32px;
-    line-height: 35.2px;
+    line-height: 110%;
     letter-spacing: 0.06em;
 }
 
 h2 {
     font-size: 44px;
-    line-height: 57.2px;
+    line-height: 130%;
     color: var(--color-light-xl);
 }
 
 h3 {
     font-size: 35px;
-    line-height: 45.5px;
+    line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
@@ -347,7 +347,7 @@ div.donation {
 }
 
 .donation-content .text-block {
-    width: 380px;
+    max-width: 380px;
     height: 282px;
     display: flex;
     flex-direction: column;
@@ -419,7 +419,7 @@ div.mail, div.phone, div.location {
     text-align: left;
 }
 
-@media screen and (768px <= width < 1280px) {
+@media screen and (width < 1280px) {
     header {
         left: 30px;
         right: 30px;
@@ -435,10 +435,8 @@ div.mail, div.phone, div.location {
     .not-only img {
         margin-top: 100px;
         margin-left: auto;
-        margin-right: 10px;
-        width: 74.089vh;
-        min-width: 569px;
-        max-width: 698px;
+        margin-right: 3.9%;
+        width: 569px;
         height: auto;
         align-self: flex-start;
     }
@@ -459,6 +457,11 @@ div.mail, div.phone, div.location {
     .about-content .text-block {
         order: -1;
         margin-bottom: 80px;
+    }
+
+    .our-friends .content {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     div.card:nth-of-type(2) {
@@ -499,7 +502,7 @@ div.mail, div.phone, div.location {
         flex-direction: column;
     }
 
-    .donation-content .text-block{
+    .donation-content .text-block {
         order: -1;
         margin-bottom: 60px;
     }
@@ -514,13 +517,74 @@ div.mail, div.phone, div.location {
 }
 
 @media screen and (320px <= width < 768px) {
+
+    h2, h3 {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .help h4, .donation h4 {
+        font-size: 15px;
+    }
+
+    h5 {
+        letter-spacing: normal;
+    }
+
+    header nav {
+        display: none;
+    }
+
     .not-only img {
         width: 81.25%;
         margin-right: 3.125%;
     }
-    
+
     .not-only .content {
         align-items: center;
     }
+
+    div.card:last-of-type, div.card:nth-of-type(2) {
+        display: none;
+    }
+
+    .help-content .list {
+        margin-top: 42px;
+        flex: 1;
+        width: calc(100% - 15px*2);
+    }
+
+    .donation-content > img, .locations + img, .about-content > img {
+        flex: 1;
+        min-width: 260px;
+        max-width: 300px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    div.donation, div.help {
+        padding: 42px 0px;
+    }
+
+    .donation-content .text-block {
+        align-items: center;
+        flex: 1;
+        padding-left: 19px;
+        padding-right: 20px;
+        margin-bottom: 42px;
+    }
+
+    .donation p {
+        text-align: justify;
+    }
+
+    footer .footer-content {
+        row-gap: 40px;
+    }
+
+    .footer-content .locations,.footer-content .contacts {
+        margin-top: 0px;
+    }
+
 
 }
