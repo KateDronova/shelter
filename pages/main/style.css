@@ -200,8 +200,8 @@ div.about-block {
 
 .about-block .about-content {
     margin: auto;
-    margin-top: 80px;
-    margin-bottom: 100px;
+    padding-top: 80px;
+    padding-bottom: 100px;
     display: flex;
     margin-left: 175px;
     margin-right: 175px;
@@ -210,8 +210,8 @@ div.about-block {
 }
 
 .about-content .text-block {
-    width: 430px;
-    height: 380px;
+    max-width: 430px;
+    min-height: 380px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -435,7 +435,7 @@ div.mail, div.phone, div.location {
     .not-only img {
         margin-top: 100px;
         margin-left: auto;
-        margin-right: 3.9%;
+        margin-right: 30px;
         width: 569px;
         height: auto;
         align-self: flex-start;
@@ -536,33 +536,95 @@ div.mail, div.phone, div.location {
     }
 
     .not-only img {
-        width: 81.25%;
-        margin-right: 3.125%;
+        width: 260px;
+        margin-right: 10px;
     }
 
     .not-only .content {
         align-items: center;
     }
 
+    .not-only p {
+        flex: 1 1 300px;
+    }
+    
+    div.about-block{
+        padding: 0px 10px;
+    }
+
+    .about-block .text-block {
+        min-width: 270px;
+        text-align: justify;
+        flex: 1;
+        padding: 0px 25px;
+        margin-bottom: 42px;
+        row-gap: 22px;
+    }
+
+    @media screen and (320px <= width < 440px) {
+        .our-friends .slider {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 42px 0px;
+            row-gap: 20px;
+        }
+
+        .our-friends .content {
+            padding: 0px 10px;
+        }
+
+        .our-friends form {
+            order: 2;
+        }
+        
+        .our-friends .button_arrow {
+            margin: 0px 50px;
+        }
+    }
+
+    @media screen and (320px <= width < 360px) {
+        .our-friends .button_arrow {
+            margin: 0px 30px;
+        }
+    }
+
+    div.card {
+        margin: 0px;
+    }
+
     div.card:last-of-type, div.card:nth-of-type(2) {
         display: none;
     }
 
+    .our-friends .button_primary {
+        padding: 15px 44.5px;
+    }
+
     .help-content .list {
+        min-width: 290px;
         margin-top: 42px;
         flex: 1;
         width: calc(100% - 15px*2);
+        row-gap: 30px;
+    }
+    
+    .help-content .list div{
+        width: 130px;
+        height: 87px;
+        margin-right: 0px;
+    }
+
+    .list img {
+        margin-bottom: 20px;
+        height: 50px;
     }
 
     .donation-content > img, .locations + img, .about-content > img {
-        flex: 1;
-        min-width: 260px;
-        max-width: 300px;
-        padding-left: 30px;
-        padding-right: 30px;
+        width: 260px;
+        padding: 0px 30px;
     }
 
-    div.donation, div.help {
+    div.donation, div.help, div.our-friends, .about-block .about-content {
         padding: 42px 0px;
     }
 
