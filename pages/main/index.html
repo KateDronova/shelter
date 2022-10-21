@@ -13,12 +13,34 @@
                     <h1><a href="#">Cozy House</a></h1>
                     <p>Shelter for pets in Boston</p>
                 </div>
-                <nav>
+                <nav class="desktop">
                     <div><a class="default" href="#">About the shelter</a></div>
                     <div><a href="../our_pets/index.html">Our pets</a></div>
                     <div><a href="#help-block">Help the shelter</a></div>
                     <div><a href="#contacts">Contacts</a></div>
                 </nav>
+                <div class="burger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="mobileMenu" hidden>
+                    <div class="logo">
+                        <h1><a href="#">Cozy House</a></h1>
+                        <p>Shelter for pets in Boston</p>
+                    </div>
+                    <div class="burger">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <nav>
+                        <div><a class="default" href="#">About the shelter</a></div>
+                        <div><a href="../our_pets/index.html">Our pets</a></div>
+                        <div><a href="#help-block">Help the shelter</a></div>
+                        <div><a href="#contacts">Contacts</a></div>
+                    </nav>
+                </div>
             </header>
         </div>
         <main id="main-page">
@@ -179,5 +201,20 @@
                 <img alt="puppy:see you!" src="../../assets/images/footer-puppy.png">
             </div>
         </footer>
+        <script>
+            const burgers = document.querySelectorAll('.burger');
+            const mobileMenu = document.querySelector('.mobileMenu');
+            for (let burger of burgers) {
+                burger.addEventListener('click', function() {
+                    if (mobileMenu.hidden) {
+                        mobileMenu.hidden = false;
+                        mobileMenu.setAttribute('display','block');
+                    } else {
+                        mobileMenu.hidden = true;
+                        mobileMenu.setAttribute('display','none');
+                    }
+                });
+            }
+        </script>
     </body>
 </html>
