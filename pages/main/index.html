@@ -201,20 +201,39 @@
                 <img alt="puppy:see you!" src="../../assets/images/footer-puppy.png">
             </div>
         </footer>
+        <div class="cover" hidden></div>
         <script>
             const burgers = document.querySelectorAll('.burger');
             const mobileMenu = document.querySelector('.mobileMenu');
+            const menuItems = document.querySelectorAll('.mobileMenu nav div');
+            const cover = document.querySelector('.cover');
+
+            function closeTheMenu() {
+                mobileMenu.hidden = true;
+                cover.hidden = true;
+                mobileMenu.setAttribute('display','none');
+                document.body.style.overflow = "";
+                ////// Add animation here!!!
+            }
+
             for (let burger of burgers) {
                 burger.addEventListener('click', function() {
                     if (mobileMenu.hidden) {
                         mobileMenu.hidden = false;
+                        cover.hidden = false;
                         mobileMenu.setAttribute('display','block');
+                        document.body.style.overflow = "hidden";
                     } else {
-                        mobileMenu.hidden = true;
-                        mobileMenu.setAttribute('display','none');
+                        closeTheMenu()
                     }
                 });
             }
+            cover.addEventListener('click', closeTheMenu);
+
+            for (let item of menuItems) {
+                item.addEventListener('click', closeTheMenu);
+            }
+            
         </script>
     </body>
 </html>

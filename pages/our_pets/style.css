@@ -369,6 +369,7 @@ div.mail, div.phone, div.location {
         width:320px;
         height: 823px;
         background-color: var(--color-light-xl);
+        z-index: 3;
     }
 
     .mobileMenu nav {
@@ -458,4 +459,15 @@ div.mail, div.phone, div.location {
 
 .hidden {
     display: none;
+}
+
+div.cover {
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+    background-color: var(--color-dark-3xl);
+	opacity: 0.6;
+    z-index: 2;
 }
