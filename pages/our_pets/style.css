@@ -25,19 +25,19 @@ h1, h2, h3, h4, h5 {
 
 h1 {
     font-size: 32px;
-    line-height: 35.2px;
+    line-height: 110%;
     letter-spacing: 0.06em;
 }
 
 h2 {
     font-size: 44px;
-    line-height: 57.2px;
+    line-height: 130%;
     color: var(--color-light-xl);
 }
 
 h3 {
     font-size: 35px;
-    line-height: 45.5px;
+    line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
@@ -129,12 +129,6 @@ a:focus, a.default {
 
 .desktop + .burger, .mobileMenu nav {
     display: none;
-}
-
-@media screen and (width > 768px) {
-    .desktop + .burger, .mobileMenu nav, .mobileMenu .logo {
-        display: none;
-    }
 }
 
 .button {
@@ -303,6 +297,21 @@ div.mail, div.phone, div.location {
         min-width: 708px;
     }
 
+    .pets-content .slider {
+        justify-content: center;
+        column-gap: 40px;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    
+    div.card:last-of-type, div.card:nth-last-of-type(2) {
+        display: none;
+    }
+    
+    .pets .pets-content {
+        padding-bottom: 76px;
+    }
+
     footer .footer-content {
         padding: 30px 30px 0px;
         column-gap: 60px;
@@ -316,7 +325,19 @@ div.mail, div.phone, div.location {
 
 }
 
+@media screen and (width > 768px) {
+    .desktop + .burger, .mobileMenu nav, .mobileMenu .logo {
+        display: none;
+    }
+}
+
 @media screen and (width < 768px) {
+    
+    header {
+        min-width: 257px;
+        padding-left: 10px;
+        padding-right: 53px;
+    }
 
     h2, h3 {
         font-size: 25px;
@@ -338,16 +359,16 @@ div.mail, div.phone, div.location {
 
     div.line {
         height: 1px;
-        border-top: 2px solid var(--color-primary-light);
+        border-top: 2px solid var(--color-dark-3xl);
     }
 
     div.mobileMenu {
         position: absolute;
-        right: -53px;
-        top: -30px;
+        right: 0px;
+        top: 0px;
         width:320px;
         height: 823px;
-        background-color: var(--color-dark-3xl);
+        background-color: var(--color-light-xl);
     }
 
     .mobileMenu nav {
@@ -380,6 +401,23 @@ div.mail, div.phone, div.location {
         right: 53px;
     }
 
+    div.pets {
+        padding: 0px 10px;
+    }
+    
+    .pets .pets-content {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .pets-content .slider {
+        margin-top: 42px;
+    }
+
+    div.navigation {
+        width: 300px;
+    }
+
     footer .footer-content {
         row-gap: 40px;
         padding-left: 10px;
@@ -397,6 +435,19 @@ div.mail, div.phone, div.location {
     div.phone, div.mail {
         margin: auto;
     }
+
+    .locations + img {
+        width: 260px;
+        padding: 0px 30px;
+    }
+}
+
+@media screen and (width < 600px) {
+    
+    div.card:nth-of-type(n+4) {
+        display: none;
+    }
+
 }
 
 @media screen and (width < 320px) {

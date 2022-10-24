@@ -648,33 +648,6 @@ div.mail, div.phone, div.location {
         row-gap: 22px;
     }
 
-    @media screen and (width < 440px) {
-        .our-friends .slider {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-            margin: 42px 0px;
-            row-gap: 20px;
-        }
-
-        .our-friends .content {
-            padding: 0px 10px;
-        }
-
-        .our-friends form {
-            order: 2;
-        }
-
-        .our-friends .button_arrow {
-            margin: 0px 50px;
-        }
-    }
-
-    @media screen and (width < 360px) {
-        .our-friends .button_arrow {
-            margin: 0px 30px;
-        }
-    }
-
     div.card {
         margin: 0px;
     }
@@ -743,6 +716,33 @@ div.mail, div.phone, div.location {
 
     div.phone, div.mail {
         margin: auto;
+    }
+}
+
+@media screen and (width < 440px) {
+    .our-friends .slider {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 42px 0px;
+        row-gap: 20px;
+    }
+
+    .our-friends .content {
+        padding: 0px 10px;
+    }
+
+    .our-friends form {
+        order: 2;
+    }
+
+    .our-friends .button_arrow {
+        margin: 0px 50px;
+    }
+}
+
+@media screen and (width < 360px) {
+    .our-friends .button_arrow {
+        margin: 0px 30px;
     }
 }
 
