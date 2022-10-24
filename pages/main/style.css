@@ -525,11 +525,14 @@ div.mail, div.phone, div.location {
     }
 
     footer .footer-content {
-        padding: 30px;
-        padding-bottom: 0px;
+        padding: 30px 30px 0px;
         column-gap: 60px;
         row-gap: 65px;
         justify-content: center;
+    }
+
+    .footer-content .contacts, .footer-content .locations {
+        margin-top: 0px;
     }
 
     div.background {
@@ -544,8 +547,13 @@ div.mail, div.phone, div.location {
         text-align: center;
     }
 
+    .not-only h2 {
+        letter-spacing: 0.06em;
+    }
+
     .help h4, .donation h4 {
         font-size: 15px;
+        margin-top: 3px;
     }
 
     h5 {
@@ -721,10 +729,20 @@ div.mail, div.phone, div.location {
 
     footer .footer-content {
         row-gap: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
-    .footer-content .locations,.footer-content .contacts {
-        margin-top: 0px;
+    .footer-content .contacts, .locations h3 {
+        padding: 0px 20px;
+    }
+
+    .footer-content .locations {
+        row-gap: 40px;
+    }
+
+    div.phone, div.mail {
+        margin: auto;
     }
 }
 
