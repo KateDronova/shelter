@@ -128,8 +128,14 @@ a:focus, a.default {
     border-bottom: 3px solid var(--color-primary);
 }
 
-.desktop + .burger {
+.desktop + .burger, .mobileMenu nav {
     display: none;
+}
+
+@media screen and (width > 768px) {
+    .desktop + .burger, .mobileMenu nav, .mobileMenu .logo {
+        display: none;
+    }
 }
 
 div.background {
@@ -531,7 +537,7 @@ div.mail, div.phone, div.location {
     }
 }
 
-@media screen and (320px <= width < 768px) {
+@media screen and (width < 768px) {
 
     h2, h3 {
         font-size: 25px;
@@ -634,7 +640,7 @@ div.mail, div.phone, div.location {
         row-gap: 22px;
     }
 
-    @media screen and (320px <= width < 440px) {
+    @media screen and (width < 440px) {
         .our-friends .slider {
             flex-wrap: wrap;
             justify-content: space-evenly;
@@ -655,7 +661,7 @@ div.mail, div.phone, div.location {
         }
     }
 
-    @media screen and (320px <= width < 360px) {
+    @media screen and (width < 360px) {
         .our-friends .button_arrow {
             margin: 0px 30px;
         }
@@ -719,6 +725,12 @@ div.mail, div.phone, div.location {
 
     .footer-content .locations,.footer-content .contacts {
         margin-top: 0px;
+    }
+}
+
+@media screen and (width < 320px) {
+    html {
+        width: 320px;
     }
 }
 
