@@ -592,6 +592,11 @@ div.mail, div.phone, div.location {
         height: 823px;
         background-color: var(--color-dark-3xl);
         z-index: 3;
+        transition: transform 1s ease;
+    }
+
+    .move {
+        transform: translateY(100vh);
     }
 
     .mobileMenu nav {
@@ -619,9 +624,13 @@ div.mail, div.phone, div.location {
 
     .mobileMenu .burger {
         position: absolute;
-        transform: rotate(90deg);
-        top: 45px;
+        transition: transform 1s ease;
+        top: 49px;
         right: 53px;
+    }
+
+    .rotate {
+        transform: rotate(0.25turn);
     }
 
     .not-only .content {

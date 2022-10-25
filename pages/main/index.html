@@ -205,14 +205,17 @@
         <script>
             const burgers = document.querySelectorAll('.burger');
             const mobileMenu = document.querySelector('.mobileMenu');
+            const mobileBurger = document.querySelector('.mobileMenu .burger');
             const menuItems = document.querySelectorAll('.mobileMenu nav div');
             const cover = document.querySelector('.cover');
 
             function closeTheMenu() {
                 mobileMenu.hidden = true;
                 cover.hidden = true;
-                mobileMenu.setAttribute('display','none');
                 document.body.style.overflow = "";
+                mobileMenu.setAttribute('display','none');
+                mobileMenu.classList.add('move');
+                mobileBurger.classList.toggle('rotate');
                 ////// Add animation here!!!
             }
 
@@ -221,8 +224,10 @@
                     if (mobileMenu.hidden) {
                         mobileMenu.hidden = false;
                         cover.hidden = false;
-                        mobileMenu.setAttribute('display','block');
                         document.body.style.overflow = "hidden";
+                        mobileMenu.setAttribute('display','block');
+                        mobileMenu.classList.remove('move');
+                        mobileBurger.classList.toggle('rotate');
                     } else {
                         closeTheMenu()
                     }
@@ -233,7 +238,7 @@
             for (let item of menuItems) {
                 item.addEventListener('click', closeTheMenu);
             }
-            
+
         </script>
     </body>
 </html>
