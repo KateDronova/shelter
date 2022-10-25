@@ -210,13 +210,14 @@
             const cover = document.querySelector('.cover');
 
             function closeTheMenu() {
-                mobileMenu.hidden = true;
                 cover.hidden = true;
                 document.body.style.overflow = "";
-                mobileMenu.setAttribute('display','none');
-                mobileMenu.classList.add('move');
                 mobileBurger.classList.toggle('rotate');
-                ////// Add animation here!!!
+                mobileMenu.classList.remove('move');
+                mobileMenu.addEventListener('transitionend', function(event) {
+                    mobileMenu.setAttribute('display','none');
+                    mobileMenu.hidden = true;
+                });
             }
 
             for (let burger of burgers) {
@@ -226,10 +227,10 @@
                         cover.hidden = false;
                         document.body.style.overflow = "hidden";
                         mobileMenu.setAttribute('display','block');
-                        mobileMenu.classList.remove('move');
+                        mobileMenu.classList.add('move');
                         mobileBurger.classList.toggle('rotate');
                     } else {
-                        closeTheMenu()
+                        closeTheMenu();
                     }
                 });
             }

@@ -586,17 +586,17 @@ div.mail, div.phone, div.location {
 
     div.mobileMenu {
         position: absolute;
-        right: -53px;
+        right: -373px;
         top: -30px;
-        width:320px;
+        width: 320px;
         height: 823px;
         background-color: var(--color-dark-3xl);
         z-index: 3;
-        transition: transform 1s ease;
+        transition: transform 600ms ease-in-out;
     }
 
     .move {
-        transform: translateY(100vh);
+        transform: translateX(-320px);
     }
 
     .mobileMenu nav {
@@ -624,7 +624,7 @@ div.mail, div.phone, div.location {
 
     .mobileMenu .burger {
         position: absolute;
-        transition: transform 1s ease;
+        transition: transform 120ms ease-out;
         top: 49px;
         right: 53px;
     }
