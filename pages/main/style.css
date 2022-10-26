@@ -776,3 +776,20 @@ div.cover {
 	opacity: 0.6;
     z-index: 2;
 }
+
+div.popup {
+    max-width: 900px;
+    max-height: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+}
+
+.popup .content {
+    margin: 50px 20px 88px 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}

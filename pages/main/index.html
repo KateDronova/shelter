@@ -80,27 +80,27 @@
                 <div class="content">
                     <h3 id="our-friends">Our friends who<br>are looking for a house</h3>
                     <div class="slider">
-                        <form action="#">
+                        <form>
                             <button class="button button_arrow left">&#8592;</button>
                         </form>
-                        <div class="card">
+                        <div id="Katrine" class="card">
                             <img alt="Katrine" src="../../assets/images/pets-katrine.png">
                             <h4>Katrine</h4>
-                            <form action="#">
+                            <form>
                                 <button class="button button_secondary">Learn more</button>
                             </form>
                         </div>
-                        <div class="card">
+                        <div id="Jennifer" class="card">
                             <img alt="Jennifer" src="../../assets/images/pets-jennifer.png">
                             <h4>Jennifer</h4>
-                            <form action="#">
+                            <form>
                                 <button class="button button_secondary">Learn more</button>
                             </form>
                         </div>
-                        <div class="card">
+                        <div id="Woody" class="card">
                             <img alt="Woody" src="../../assets/images/pets-woody.png">
                             <h4>Woody</h4>
-                            <form action="#">
+                            <form>
                                 <button class="button button_secondary">Learn more</button>
                             </form>
                         </div>
@@ -202,44 +202,10 @@
             </div>
         </footer>
         <div class="cover" hidden></div>
-        <script>
-            const burgers = document.querySelectorAll('.burger');
-            const mobileMenu = document.querySelector('.mobileMenu');
-            const mobileBurger = document.querySelector('.mobileMenu .burger');
-            const menuItems = document.querySelectorAll('.mobileMenu nav div');
-            const cover = document.querySelector('.cover');
-
-            function closeTheMenu() {
-                cover.hidden = true;
-                document.body.style.overflow = "";
-                mobileBurger.classList.toggle('rotate');
-                mobileMenu.classList.remove('move');
-                mobileMenu.addEventListener('transitionend', function(event) {
-                    mobileMenu.setAttribute('display','none');
-                    mobileMenu.hidden = true;
-                });
-            }
-
-            for (let burger of burgers) {
-                burger.addEventListener('click', function() {
-                    if (mobileMenu.hidden) {
-                        mobileMenu.hidden = false;
-                        cover.hidden = false;
-                        document.body.style.overflow = "hidden";
-                        mobileMenu.setAttribute('display','block');
-                        mobileMenu.classList.add('move');
-                        mobileBurger.classList.toggle('rotate');
-                    } else {
-                        closeTheMenu();
-                    }
-                });
-            }
-            cover.addEventListener('click', closeTheMenu);
-
-            for (let item of menuItems) {
-                item.addEventListener('click', closeTheMenu);
-            }
-
-        </script>
+        <div class="popup" hidden>
+            <img src="" alt="photo">
+            <div class="content"></div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
