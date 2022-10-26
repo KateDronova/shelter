@@ -131,14 +131,37 @@ for (let item of menuItems) {
     item.addEventListener('click', closeTheMenu);
 }
 
-const popup = document.querySelector('div.popup');
 const learnMoreButtons = document.querySelectorAll('.card button');
+const popup = document.querySelector('div.popup');
+const popImg = document.querySelector('.popup img');
+const popCont = document.querySelector('.popup div');
+const popH3 = document.querySelector('.popup h3');
+const popH4 = document.querySelector('.popup h4');
+const popH5 = document.querySelector('h4 + h5');
+const close = document.querySelector('button.close');
 
 function openPopup() {
     popup.hidden = false;
     cover.hidden = false;
-
+    document.body.style.overflow = "hidden";
+    popImg.setAttribute('src', '');
+    popH3.append(this.closest('.card').id);
+    popH4.append(this.closest('.card').id[type] + '-' + this.closest('.card').id[breed]);
+    popH5.append(this.closest('.card').id[description]);
 }
+
+function closePopup() {
+    popup.hidden = true;
+    cover.hidden = true;
+    document.body.style.overflow = "";
+    popH3.innerText = '';
+    popH4.innerText = '';
+    popH5.innerText = '';
+}
+
+cover.addEventListener('click', closePopup);
+close.addEventListener('click', closePopup);
+
 for (let learnMoreButton of learnMoreButtons) {
     learnMoreButton.addEventListener('click', openPopup);
 }
