@@ -203,7 +203,7 @@ div.not-only {
     background-color: transparent;
 }
 
-.button:hover {
+.button:hover, .button.hover {
     cursor: pointer;
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
@@ -217,19 +217,37 @@ div.popup {
 	bottom: calc((100% - 500px)/2);
     max-width: 900px;
     max-height: 500px;
-    color: black;
-    grid-auto-flow: column;
-    grid-template-columns: auto 1fr;
     background-color: var(--color-light-s);
     border-radius: 9px;
     z-index: 3;
 }
 
+.popup img {
+    width: 500px;
+    height: 500px;
+    border-radius: 9px 0px 0px 9px;
+}
+
 .popup .content {
-    margin: 50px 20px 88px 30px;
+    margin: 50px 20px 88px 29px;
+    width: 350px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     row-gap: 40px;
+}
+
+.popup ul {
+    padding-left: 15px;
+    margin: 0px;
+}
+
+.popup ul li {
+    margin-bottom: 11px;
+}
+
+.popup ul li:last-child {
+    margin-bottom: 0px;
 }
 
 div.about-block {
