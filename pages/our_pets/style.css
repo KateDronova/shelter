@@ -141,12 +141,6 @@ a:focus, a.default {
     line-height: 130%;
 }
 
-.button:hover {
-    cursor: pointer;
-    background-color: var(--color-primary-light);
-    border: 2px solid var(--color-primary-light);
-}
-
 .button_primary {
     padding: 15px 45px;
     border-style: none;
@@ -178,6 +172,20 @@ a:focus, a.default {
 
 .button.disabled:hover {
     background-color: var(--color-light-l);
+}
+
+.button_arrow.close {
+    font-size: large;
+    position: fixed;
+	top: calc((100% - 500px)/2 - 52px);
+	right: calc((100% - 900px)/2 - 40px);
+    background-color: transparent;
+}
+
+.button:hover, .button.hover {
+    cursor: pointer;
+    background-color: var(--color-primary-light);
+    border: 2px solid var(--color-primary-light);
 }
 
 main {
@@ -247,6 +255,51 @@ div.navigation {
     justify-content: space-between;
 }
 
+div.popup {
+    position: fixed;
+	top: calc((100% - 500px)/2);
+	left: calc((100% - 900px)/2);
+	right: calc((100% - 900px)/2);
+	bottom: calc((100% - 500px)/2);
+    max-width: 900px;
+    max-height: 500px;
+    background-color: var(--color-light-s);
+    border-radius: 9px;
+    z-index: 3;
+}
+
+.popup img {
+    width: 500px;
+    height: 500px;
+    border-radius: 9px 0px 0px 9px;
+}
+
+.popup .content {
+    margin: 50px 20px 88px 29px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 40px;
+}
+
+.popup ul {
+    padding-left: 15px;
+    margin: 0px;
+}
+
+.popup ul li {
+    margin-bottom: 11px;
+}
+
+.popup ul li:last-child {
+    margin-bottom: 0px;
+}
+
+.popup ul li::marker {
+    color: var(--color-primary);
+}
+
 footer {
     min-height: 350px;
     background-image: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
@@ -303,11 +356,11 @@ div.mail, div.phone, div.location {
         margin-top: 30px;
         margin-bottom: 40px;
     }
-    
+
     div.card:last-of-type, div.card:nth-last-of-type(2) {
         display: none;
     }
-    
+
     .pets .pets-content {
         padding-bottom: 76px;
     }
@@ -473,7 +526,7 @@ div.mail, div.phone, div.location {
 }
 
 @media screen and (width < 600px) {
-    
+
     div.card:nth-of-type(n+4) {
         display: none;
     }
@@ -493,9 +546,9 @@ div.mail, div.phone, div.location {
 div.cover {
     width: 100%;
 	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+	position: fixed;
+	top: 0vh;
+	left: 0vh;
     background-color: var(--color-dark-3xl);
 	opacity: 0.6;
     z-index: 2;

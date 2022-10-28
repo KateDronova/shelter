@@ -39,7 +39,7 @@ const petsInfo = [
 
 {
   name: "Scarlett",
-  img: "../../assets/images/pets-scarlett.png",
+  img: "../../assets/images/pets-scarlet.png",
   type: "Dog",
   breed: "Jack Russell Terrier",
   description: "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",

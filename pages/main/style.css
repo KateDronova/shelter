@@ -250,6 +250,10 @@ div.popup {
     margin-bottom: 0px;
 }
 
+.popup ul li::marker {
+    color: var(--color-primary);
+}
+
 div.about-block {
     margin: auto;
     padding-left: 40px;

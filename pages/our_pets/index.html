@@ -48,61 +48,45 @@
                 <div class="pets-content">
                     <h3>Our friends who<br>are looking for a house</h3>
                     <div class="slider">
-                        <div class="card">
+                        <div id="Katrine" class="card">
                             <img alt="Katrine" src="../../assets/images/pets-katrine.png">
                             <h4>Katrine</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Jennifer" class="card">
                             <img alt="Jennifer" src="../../assets/images/pets-jennifer.png">
                             <h4>Jennifer</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Woody" class="card">
                             <img alt="Woody" src="../../assets/images/pets-woody.png">
                             <h4>Woody</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Sophia" class="card">
                             <img alt="Sophia" src="../../assets/images/pets-sophia.png">
                             <h4>Sophia</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Timmy" class="card">
                             <img alt="Timmy" src="../../assets/images/pets-timmy.png">
                             <h4>Timmy</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Charly" class="card">
                             <img alt="Charly" src="../../assets/images/pets-charly.png">
                             <h4>Charly</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Scarlett" class="card">
                             <img alt="Scarlett" src="../../assets/images/pets-scarlet.png">
                             <h4>Scarlett</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
-                        <div class="card">
+                        <div id="Freddie" class="card">
                             <img alt="Freddie" src="../../assets/images/pets-freddie.png">
                             <h4>Freddie</h4>
-                            <form action="#">
-                                <button class="button button_secondary">Learn more</button>
-                            </form>
+                            <button class="button button_secondary">Learn more</button>
                         </div>
                     </div>
                     <div class="navigation">
@@ -153,44 +137,25 @@
             </div>
         </footer>
         <div class="cover" hidden></div>
-        <script>
-            const burgers = document.querySelectorAll('.burger');
-            const mobileMenu = document.querySelector('.mobileMenu');
-            const mobileBurger = document.querySelector('.mobileMenu .burger');
-            const menuItems = document.querySelectorAll('.mobileMenu nav div');
-            const cover = document.querySelector('.cover');
-
-            function closeTheMenu() {
-                cover.hidden = true;
-                document.body.style.overflow = "";
-                mobileBurger.classList.toggle('rotate');
-                mobileMenu.classList.remove('move');
-                mobileMenu.addEventListener('transitionend', function(event) {
-                    mobileMenu.setAttribute('display','none');
-                    mobileMenu.hidden = true;
-                });
-            }
-
-            for (let burger of burgers) {
-                burger.addEventListener('click', function() {
-                    if (mobileMenu.hidden) {
-                        mobileMenu.hidden = false;
-                        cover.hidden = false;
-                        document.body.style.overflow = "hidden";
-                        mobileMenu.setAttribute('display','block');
-                        mobileMenu.classList.add('move');
-                        mobileBurger.classList.toggle('rotate');
-                    } else {
-                        closeTheMenu();
-                    }
-                });
-            }
-            cover.addEventListener('click', closeTheMenu);
-
-            for (let item of menuItems) {
-                item.addEventListener('click', closeTheMenu);
-            }
-
-        </script>
+        <div class="popup" hidden>
+            <button class="button button_arrow close">×</button>
+            <img alt="photo">
+            <div class="content">
+                <div>
+                    <h3></h3>
+                    <h4></h4>
+                </div>
+                <h5></h5>
+                <ul>
+                    <h5>
+                        <li id="age"></li>
+                        <li id="inocul"></li>
+                        <li id="disease"></li>
+                        <li id="parasit"></li>
+                    </h5>
+                </ul>
+            </div>
+        </div>
+        <script src="script_pets.js"></script>
     </body>
 </html>
