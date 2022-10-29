@@ -437,7 +437,7 @@ div.mail, div.phone, div.location {
 }
 
 @media screen and (width < 768px) {
-    
+
     header {
         min-width: 257px;
         padding-left: 10px;
@@ -477,7 +477,7 @@ div.mail, div.phone, div.location {
         z-index: 3;
         transition: transform 600ms ease-in-out;
     }
-    
+
     .move {
         transform: translateX(-320px);
     }
@@ -527,7 +527,7 @@ div.mail, div.phone, div.location {
     .mobileMenu .logo p {
         color: var(--color-light-xl);
     }
-    
+
     .mobileMenu .logo a {
         color: var(--color-primary);
     }
@@ -539,7 +539,7 @@ div.mail, div.phone, div.location {
     div.pets {
         padding: 0px 10px;
     }
-    
+
     .pets .pets-content {
         padding-top: 42px;
         padding-bottom: 42px;

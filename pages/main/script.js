@@ -193,3 +193,46 @@ cover.addEventListener('click', closePopup);
   cover.addEventListener('mouseout', function() {
     close.classList.remove('hover');
   });
+
+/// Carousel
+const arrowButtons = document.querySelectorAll('.our-friends .button_arrow');
+const cards = document.querySelectorAll('.card');
+const cardImges = document.querySelectorAll('.card img');
+const cardNames = document.querySelectorAll('.card h4');
+
+function findSelected() {
+  let selected = [];
+  for (let cardName of cardNames) {
+    if (cardName.style.display !== 'none') {
+      selected.push(cardName);
+    }
+  }
+  return selected;
+}
+
+function generateNewContent() {
+  let newContent = [];
+  findSelected();
+  for (let i = 0; i < petsInfo.length; i++) {
+    for (let j = 0; j < selected.length; j++) {
+      if (petsInfo[i].name !== selected[j] && newContent.length < 3) {
+        newContent.push(petsInfo[i].name);
+      }
+    }
+  }
+  return newContent;
+}
+
+function appendNewContent() {
+  generateNewContent();
+  for (let cardName of cardNames) {
+    cardName.innerText = '';
+  }
+  <div id="Woody" class="card">
+       <img alt="Woody" src="../../assets/images/pets-woody.png">
+     <h4>Woody</h4>
+   <button class="button button_secondary">Learn more</button>
+</div>
+}
+
+arrowButtons.addEventListener('click', appendNewContent);
