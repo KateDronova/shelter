@@ -39,7 +39,7 @@ const petsInfo = [
 
 {
   name: "Scarlett",
-  img: "../../assets/images/pets-scarlett.png",
+  img: "../../assets/images/pets-scarlet.png",
   type: "Dog",
   breed: "Jack Russell Terrier",
   description: "Scarlett is a happy, playful girl who will make you laugh and smile. She forms a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single individual too since she likes to hang out and be with her human.",
@@ -194,45 +194,67 @@ cover.addEventListener('click', closePopup);
     close.classList.remove('hover');
   });
 
+
 /// Carousel
-const arrowButtons = document.querySelectorAll('.our-friends .button_arrow');
-const cards = document.querySelectorAll('.card');
-const cardImges = document.querySelectorAll('.card img');
-const cardNames = document.querySelectorAll('.card h4');
+const arrows = document.querySelectorAll('.our-friends .button_arrow');
+const slider = document.querySelector('.our-friends .slider');
+
+const cards = slider.querySelectorAll('.card');
+const card1 = slider.querySelector('.card.n1');
+const card2 = slider.querySelector('.card.n2');
+const card3 = slider.querySelector('.card.n3');
+
+const cardImg1 = slider.querySelector('.card.n1 img');
+const cardImg2 = slider.querySelector('.card.n2 img');
+const cardImg3 = slider.querySelector('.card.n3 img');
+
+const cardName1 = slider.querySelector('.card.n1 h4');
+const cardName2 = slider.querySelector('.card.n2 h4');
+const cardName3 = slider.querySelector('.card.n3 h4');
+
 
 function findSelected() {
   let selected = [];
-  for (let cardName of cardNames) {
-    if (cardName.style.display !== 'none') {
-      selected.push(cardName);
+  for (let i = 0; i < petsInfo.length; i++) {
+    for (let card of cards) {
+      if (card.innerText.includes(petsInfo[i].name)) {
+        selected.push(i);
+      }
     }
   }
   return selected;
 }
 
-function generateNewContent() {
-  let newContent = [];
-  findSelected();
-  for (let i = 0; i < petsInfo.length; i++) {
-    for (let j = 0; j < selected.length; j++) {
-      if (petsInfo[i].name !== selected[j] && newContent.length < 3) {
-        newContent.push(petsInfo[i].name);
-      }
-    }
+function changeContent() {
+  let selected = findSelected();
+  for (let i = 0; i < selected.length; i++) {
+    let j;
+    let h;
+    let k;
+    do {
+      j = Math.floor(Math.random() * 8);
+      h = Math.floor(Math.random() * 8);
+      k = Math.floor(Math.random() * 8);
+    } while (h === j || h === k || j === k || j === selected[i] || h === selected[i] || k === selected[i]);
+
+    cardName1.innerText = petsInfo[j].name;
+    cardName2.innerText = petsInfo[h].name;
+    cardName3.innerText = petsInfo[k].name;
+  
+    cardImg1.setAttribute('src', petsInfo[j].img);
+    cardImg2.setAttribute('src', petsInfo[h].img);
+    cardImg3.setAttribute('src', petsInfo[k].img);
+  
+    card1.id = petsInfo[j].name;
+    card2.id = petsInfo[h].name;
+    card3.id = petsInfo[k].name;
   }
-  return newContent;
+
+  for (let card of cards) {
+    card.classList.toggle('switch');
+  }
 }
 
-function appendNewContent() {
-  generateNewContent();
-  for (let cardName of cardNames) {
-    cardName.innerText = '';
-  }
-  <div id="Woody" class="card">
-       <img alt="Woody" src="../../assets/images/pets-woody.png">
-     <h4>Woody</h4>
-   <button class="button button_secondary">Learn more</button>
-</div>
+for (let arrow of arrows) {
+  arrow.addEventListener('click', changeContent);
 }
-
-arrowButtons.addEventListener('click', appendNewContent);

@@ -336,8 +336,28 @@ div.our-friends {
     align-items: center;
     cursor: pointer;
     margin-right: 38px;
+    transition: transform 0.8s cubic-bezier(0.4, -5, 0.6, 5);
 }
 
+.switch {
+    transform: translateY(1px);
+}
+/* Couldn't apply here
+@keyframes switchTheSlider {
+    0% {
+        transform: translateX(-1px);
+        opacity: 1;
+    }
+    40% {
+        transform: translateX(10px) rotateX(0.4turn) scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(1px);
+        opacity: 1;
+    }
+}
+*/
 .card:last-of-type {
     margin-right: 0px;
 }
@@ -885,6 +905,7 @@ div.mail, div.phone, div.location {
 
     .our-friends .button_arrow {
         margin: 0px 50px;
+        order: 2;
     }
 }
 
