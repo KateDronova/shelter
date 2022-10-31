@@ -187,9 +187,50 @@ function closePopup() {
 
 close.addEventListener('click', closePopup);
 cover.addEventListener('click', closePopup);
-  cover.addEventListener('mouseover', function() {
-    close.classList.add('hover');
-  });
-  cover.addEventListener('mouseout', function() {
-    close.classList.remove('hover');
-  });
+
+cover.addEventListener('mouseover', function() {
+  close.classList.add('hover');
+});
+cover.addEventListener('mouseout', function() {
+  close.classList.remove('hover');
+});
+
+/// Pagination
+//const arrows = document.querySelectorAll('.our-friends .button_arrow');
+const slider = document.querySelector('.slider');
+const cards = slider.querySelectorAll('.card');
+
+const card1 = slider.querySelector('.card.n1');
+const card2 = slider.querySelector('.card.n2');
+const card3 = slider.querySelector('.card.n3');
+const card4 = slider.querySelector('.card.n4');
+const card5 = slider.querySelector('.card.n5');
+const card6 = slider.querySelector('.card.n6');
+const card7 = slider.querySelector('.card.n7');
+const card8 = slider.querySelector('.card.n8');
+
+const cardImg1 = slider.querySelector('.card.n1 img');
+const cardImg2 = slider.querySelector('.card.n2 img');
+const cardImg3 = slider.querySelector('.card.n3 img');
+const cardImg4 = slider.querySelector('.card.n4 img');
+const cardImg5 = slider.querySelector('.card.n5 img');
+const cardImg6 = slider.querySelector('.card.n6 img');
+const cardImg7 = slider.querySelector('.card.n7 img');
+const cardImg8 = slider.querySelector('.card.n8 img');
+
+const cardName1 = slider.querySelector('.card.n1 h4');
+const cardName2 = slider.querySelector('.card.n2 h4');
+const cardName3 = slider.querySelector('.card.n3 h4');
+const cardName4 = slider.querySelector('.card.n4 h4');
+const cardName5 = slider.querySelector('.card.n5 h4');
+const cardName6 = slider.querySelector('.card.n6 h4');
+const cardName7 = slider.querySelector('.card.n7 h4');
+const cardName8 = slider.querySelector('.card.n8 h4');
+
+const maxPetsInfo = petsInfo.slice();
+for (let i = 0; maxPetsInfo.length < 12; i++) {
+  let newItem = petsInfo[Math.floor(Math.random() * 6)];
+  if (!maxPetsInfo.slice(-6).includes(newItem)) {
+    maxPetsInfo.push(newItem);
+  }
+}
