@@ -160,7 +160,7 @@ a:focus, a.default {
     background-color: var(--color-light-l);
 }
 
-.button.page:active {
+.button.page:active, .page.active {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
 }

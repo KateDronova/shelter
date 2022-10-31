@@ -227,10 +227,84 @@ const cardName6 = slider.querySelector('.card.n6 h4');
 const cardName7 = slider.querySelector('.card.n7 h4');
 const cardName8 = slider.querySelector('.card.n8 h4');
 
-const maxPetsInfo = petsInfo.slice();
-for (let i = 0; maxPetsInfo.length < 12; i++) {
-  let newItem = petsInfo[Math.floor(Math.random() * 6)];
-  if (!maxPetsInfo.slice(-6).includes(newItem)) {
-    maxPetsInfo.push(newItem);
+// Create pseudo-random array
+function createPaginationArr() {
+  const maxPetsInfo = petsInfo.slice();
+  let num = -2;
+  for (let i = 0; maxPetsInfo.length < 12; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 6)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
   }
+  num = -4;
+  for (let i = 0; maxPetsInfo.length < 16; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  num = -4;
+  for (let i = 0; maxPetsInfo.length < 18; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  num = -2;
+  for (let i = 0; maxPetsInfo.length < 24; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  let newI = petsInfo[Math.floor(Math.random() * 8)];
+  maxPetsInfo.push(newI);
+  num = -1;
+  for (let i = 0; maxPetsInfo.length < 32; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  num = -2;
+  for (let i = 0; maxPetsInfo.length < 36; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  num = -4;
+  for (let i = 0; maxPetsInfo.length < 40; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  num = -4;
+  for (let i = 0; maxPetsInfo.length < 42; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  num = -2;
+  for (let i = 0; maxPetsInfo.length < 48; i++) {
+    let newItem = petsInfo[Math.floor(Math.random() * 8)];
+    if (!maxPetsInfo.slice(num).includes(newItem)) {
+      maxPetsInfo.push(newItem);
+      num--;
+    }
+  }
+  return maxPetsInfo;
 }
+
+const maxPetsArr = createPaginationArr();
