@@ -198,8 +198,8 @@ cover.addEventListener('click', closePopup);
 /// Carousel
 const arrows = document.querySelectorAll('.our-friends .button_arrow');
 const slider = document.querySelector('.our-friends .slider');
-
 const cards = slider.querySelectorAll('.card');
+
 const card1 = slider.querySelector('.card.n1');
 const card2 = slider.querySelector('.card.n2');
 const card3 = slider.querySelector('.card.n3');
@@ -226,35 +226,48 @@ function findSelected() {
 }
 
 function changeContent() {
-  let selected = findSelected();
-  for (let i = 0; i < selected.length; i++) {
-    let j;
-    let h;
-    let k;
-    do {
+  let arr = findSelected();
+  let j = Math.floor(Math.random() * 8);
+  let h = Math.floor(Math.random() * 8);
+  let k = Math.floor(Math.random() * 8);
+
+  for (let i = 0; i < arr.length; i++) {
+    while (h === j || h === k || j === k || arr.includes(j) || arr.includes(h) || arr.includes(k)) {
       j = Math.floor(Math.random() * 8);
       h = Math.floor(Math.random() * 8);
       k = Math.floor(Math.random() * 8);
-    } while (h === j || h === k || j === k || j === selected[i] || h === selected[i] || k === selected[i]);
-
+    }
+  }
     cardName1.innerText = petsInfo[j].name;
     cardName2.innerText = petsInfo[h].name;
     cardName3.innerText = petsInfo[k].name;
-  
+
     cardImg1.setAttribute('src', petsInfo[j].img);
     cardImg2.setAttribute('src', petsInfo[h].img);
     cardImg3.setAttribute('src', petsInfo[k].img);
-  
+
     card1.id = petsInfo[j].name;
     card2.id = petsInfo[h].name;
     card3.id = petsInfo[k].name;
-  }
+}
 
+function switchTheSlider(event) {
   for (let card of cards) {
-    card.classList.toggle('switch');
+    if (event.target.classList.contains('right')) {
+      card.style.position='relative';
+      card.style.animation='switchRight 0.8s ease-out';
+
+    } else if (event.target.classList.contains('left')) {
+      card.style.position='relative';
+      card.style.animation='switchLeft 0.8s ease-out';
+    }
+    card.addEventListener('animationend', function() {
+      card.style.animation='';
+    })
   }
 }
 
 for (let arrow of arrows) {
   arrow.addEventListener('click', changeContent);
+  arrow.addEventListener('click', switchTheSlider);
 }
