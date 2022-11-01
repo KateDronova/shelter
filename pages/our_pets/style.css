@@ -152,7 +152,7 @@ a:focus, a.default {
     background-color: var(--color-light-s);
 }
 
-.button_arrow {
+.button_circle {
     box-sizing: border-box;
     width: 52px;
     height: 52px;
@@ -165,16 +165,7 @@ a:focus, a.default {
     border-color: var(--color-primary);
 }
 
-.button.disabled {
-    color: var(--color-dark-s);
-    border-color: var(--color-dark-s);
-}
-
-.button.disabled:hover {
-    background-color: var(--color-light-l);
-}
-
-.button_arrow.close {
+.button_circle.close {
     font-size: large;
     position: fixed;
 	top: calc((100% - 500px)/2 - 52px);
@@ -186,6 +177,22 @@ a:focus, a.default {
     cursor: pointer;
     background-color: var(--color-primary-light);
     border: 2px solid var(--color-primary-light);
+}
+
+.button.disabled {
+    color: var(--color-dark-s);
+    border-color: var(--color-dark-s);
+    cursor: not-allowed;
+}
+
+.button.disabled:hover {
+    background-color: var(--color-light-l);
+}
+
+@keyframes fadeTheContent {
+    0%   {opacity: 1;}
+    30%  {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 main {
@@ -412,7 +419,7 @@ div.mail, div.phone, div.location {
         margin-bottom: 6px;
     }
 
-    .button_arrow.close {
+    .button_circle.close {
         top: calc((100% - 350px)/2 - 52px);
         right: calc((100% - 630px)/2 - 42px);
     }
@@ -570,7 +577,7 @@ div.mail, div.phone, div.location {
         margin: 10px;
     }
 
-    .button_arrow.close {
+    .button_circle.close {
         top: calc((100% - 341px)/2 - 52px);
         right: calc((100% - 240px)/2 - 30px);
     }
