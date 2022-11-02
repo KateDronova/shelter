@@ -273,6 +273,8 @@ function createPaginationArr() {
 const maxPetsArr = createPaginationArr();
 const slider = document.querySelector('.slider');
 const cards = document.querySelectorAll('.card');
+const cardImages = document.querySelectorAll('.card img');
+const cardNames = document.querySelectorAll('.card h4');
 
 const card1 = document.querySelector('.card.n1');
 const card2 = document.querySelector('.card.n2');
@@ -330,12 +332,12 @@ function changePageNumber() {
     if (this === farLeft) {N = 1;}
     if (this === right) {
       if (screen.width >= 1280 && N < 6) {N++;}
-      if (screen.width < 1280 && N < 8) {N++;}
+      if (screen.width < 1280 && screen.width >= 768 && N < 8) {N++;}
       if (screen.width < 768 && N < 16) {N++;}
     }
     if (this === farRight) {
       if (screen.width >= 1280) {N = 6;}
-      if (screen.width < 1280) {N = 8;}
+      if (screen.width < 1280 && screen.width >= 768) {N = 8;}
       if (screen.width < 768) {N = 16;}
     }
 
@@ -347,11 +349,11 @@ function changePageNumber() {
       left.classList.remove('disabled');
       farLeft.classList.remove('disabled');
     }
-    if (screen.width >= 1280 && N >= 6 || screen.width < 1280 && N >= 8 || screen.width < 768 && N >= 16) {
+    if (screen.width >= 1280 && N >= 6 || screen.width < 1280 && screen.width >= 768 && N >= 8 || screen.width < 768 && N >= 16) {
       right.classList.add('disabled');
       farRight.classList.add('disabled');
     }
-    if (screen.width >= 1280 && N < 6 || screen.width < 1280 && N < 8 || screen.width < 768 && N < 16) {
+    if (screen.width >= 1280 && N < 6 || screen.width < 1280 && screen.width >= 768 && N < 8 || screen.width < 768 && N < 16) {
       right.classList.remove('disabled');
       farRight.classList.remove('disabled');
     }
@@ -360,10 +362,107 @@ function changePageNumber() {
 }
 
 function changeContent() {
-  if (screen.width >= 1280) {;}
-  if (screen.width < 1280 && screen.width >= 768) {;}
-  if (screen.width < 768) {;}
-  //maxPetsArr[0];
+  if (screen.width >= 1280) {
+      let j;
+      if (pageN.innerText == 1) {j = 0;}
+      if (pageN.innerText == 2) {j = 8;}
+      if (pageN.innerText == 3) {j = 16;}
+      if (pageN.innerText == 4) {j = 24;}
+      if (pageN.innerText == 5) {j = 32;}
+      if (pageN.innerText == 6) {j = 40;}
+
+      cardName1.innerText = maxPetsArr[0+j].name;
+      cardName2.innerText = maxPetsArr[1+j].name;
+      cardName3.innerText = maxPetsArr[2+j].name;
+      cardName4.innerText = maxPetsArr[3+j].name;
+      cardName5.innerText = maxPetsArr[4+j].name;
+      cardName6.innerText = maxPetsArr[5+j].name;
+      cardName7.innerText = maxPetsArr[6+j].name;
+      cardName8.innerText = maxPetsArr[7+j].name;
+
+      cardImg1.setAttribute('src', maxPetsArr[0+j].img);
+      cardImg2.setAttribute('src', maxPetsArr[1+j].img);
+      cardImg3.setAttribute('src', maxPetsArr[2+j].img);
+      cardImg4.setAttribute('src', maxPetsArr[3+j].img);
+      cardImg5.setAttribute('src', maxPetsArr[4+j].img);
+      cardImg6.setAttribute('src', maxPetsArr[5+j].img);
+      cardImg7.setAttribute('src', maxPetsArr[6+j].img);
+      cardImg8.setAttribute('src', maxPetsArr[7+j].img);
+
+      card1.id = maxPetsArr[0+j].name;
+      card2.id = maxPetsArr[1+j].name;
+      card3.id = maxPetsArr[2+j].name;
+      card4.id = maxPetsArr[3+j].name;
+      card5.id = maxPetsArr[4+j].name;
+      card6.id = maxPetsArr[5+j].name;
+      card7.id = maxPetsArr[6+j].name;
+      card8.id = maxPetsArr[7+j].name;
+  }
+
+  if (screen.width < 1280 && screen.width >= 768) {
+    let j;
+    if (pageN.innerText == 1) {j = 0;}
+    if (pageN.innerText == 2) {j = 6;}
+    if (pageN.innerText == 3) {j = 12;}
+    if (pageN.innerText == 4) {j = 18;}
+    if (pageN.innerText == 5) {j = 24;}
+    if (pageN.innerText == 6) {j = 30;}
+    if (pageN.innerText == 7) {j = 36;}
+    if (pageN.innerText == 8) {j = 42;}
+
+    cardName1.innerText = maxPetsArr[0+j].name;
+    cardName2.innerText = maxPetsArr[1+j].name;
+    cardName3.innerText = maxPetsArr[2+j].name;
+    cardName4.innerText = maxPetsArr[3+j].name;
+    cardName5.innerText = maxPetsArr[4+j].name;
+    cardName6.innerText = maxPetsArr[5+j].name;
+
+    cardImg1.setAttribute('src', maxPetsArr[0+j].img);
+    cardImg2.setAttribute('src', maxPetsArr[1+j].img);
+    cardImg3.setAttribute('src', maxPetsArr[2+j].img);
+    cardImg4.setAttribute('src', maxPetsArr[3+j].img);
+    cardImg5.setAttribute('src', maxPetsArr[4+j].img);
+    cardImg6.setAttribute('src', maxPetsArr[5+j].img);
+
+    card1.id = maxPetsArr[0+j].name;
+    card2.id = maxPetsArr[1+j].name;
+    card3.id = maxPetsArr[2+j].name;
+    card4.id = maxPetsArr[3+j].name;
+    card5.id = maxPetsArr[4+j].name;
+    card6.id = maxPetsArr[5+j].name;
+  }
+
+  if (screen.width < 768) {
+    let j;
+    if (pageN.innerText == 1) {j = 0;}
+    if (pageN.innerText == 2) {j = 3;}
+    if (pageN.innerText == 3) {j = 6;}
+    if (pageN.innerText == 4) {j = 9;}
+    if (pageN.innerText == 5) {j = 12;}
+    if (pageN.innerText == 6) {j = 15;}
+    if (pageN.innerText == 7) {j = 18;}
+    if (pageN.innerText == 8) {j = 21;}
+    if (pageN.innerText == 9) {j = 24;}
+    if (pageN.innerText == 10) {j = 27;}
+    if (pageN.innerText == 11) {j = 30;}
+    if (pageN.innerText == 12) {j = 33;}
+    if (pageN.innerText == 13) {j = 36;}
+    if (pageN.innerText == 14) {j = 39;}
+    if (pageN.innerText == 15) {j = 42;}
+    if (pageN.innerText == 16) {j = 45;}
+
+    cardName1.innerText = maxPetsArr[0+j].name;
+    cardName2.innerText = maxPetsArr[1+j].name;
+    cardName3.innerText = maxPetsArr[2+j].name;
+
+    cardImg1.setAttribute('src', maxPetsArr[0+j].img);
+    cardImg2.setAttribute('src', maxPetsArr[1+j].img);
+    cardImg3.setAttribute('src', maxPetsArr[2+j].img);
+
+    card1.id = maxPetsArr[0+j].name;
+    card2.id = maxPetsArr[1+j].name;
+    card3.id = maxPetsArr[2+j].name;
+  }
 }
 
 for (let arrow of arrows) {

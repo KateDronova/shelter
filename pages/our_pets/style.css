@@ -190,8 +190,8 @@ a:focus, a.default {
 }
 
 @keyframes fadeTheContent {
-    0%   {opacity: 1;}
-    30%  {opacity: 0;}
+    0%   {opacity: 0;}
+    50%  {opacity: 0.8;}
     100% {opacity: 1;}
 }
 
